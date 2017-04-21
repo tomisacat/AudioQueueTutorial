@@ -10,25 +10,25 @@ import AudioToolbox
 import AVFoundation
 
 func audioQueueOutputCallback(inUserData: UnsafeMutableRawPointer?, inQueue: AudioQueueRef, inBuffer: AudioQueueBufferRef) {
-    if let info: PlayerInfo = inUserData?.assumingMemoryBound(to: PlayerInfo.self).pointee {
-        var bufferLength: UInt32 = info.bufferByteSize
+    if let info = inUserData?.assumingMemoryBound(to: PlayerInfo.self) {
+        var bufferLength: UInt32 = info.pointee.bufferByteSize
         var numPkgs: UInt32 = kNumberPackages
-        var status = AudioFileReadPacketData(info.mAudioFile!, false, &bufferLength, info.mPacketDesc, info.mCurrentPacket, &numPkgs, inBuffer.pointee.mAudioData)
+        var status = AudioFileReadPacketData(info.pointee.mAudioFile!, false, &bufferLength, info.pointee.mPacketDesc, info.pointee.mCurrentPacket, &numPkgs, inBuffer.pointee.mAudioData)
         if status == noErr {
             inBuffer.pointee.mAudioDataByteSize = bufferLength
         }
         
-        status = AudioQueueEnqueueBuffer(info.mQueue!, inBuffer, numPkgs, info.mPacketDesc)
-        info.mCurrentPacket += Int64(numPkgs)
+        status = AudioQueueEnqueueBuffer(info.pointee.mQueue!, inBuffer, numPkgs, info.pointee.mPacketDesc)
+        info.pointee.mCurrentPacket += Int64(numPkgs)
         
         if numPkgs == 0 {
             print("play finished")
-            AudioQueueStop(info.mQueue!, false)
+            AudioQueueStop(info.pointee.mQueue!, false)
         }
     }
 }
 
-public class PlayerInfo {
+struct PlayerInfo {
     var mDataFormat: AudioStreamBasicDescription?
     var mQueue: AudioQueueRef?
     var mBuffers: [AudioQueueBufferRef] = []
