@@ -14,6 +14,10 @@
 		F2DCC57B1EA73F99002DFF8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DCC5791EA73F99002DFF8C /* LaunchScreen.storyboard */; };
 		F2DCC5861EA73F99002DFF8C /* AudioQueueTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCC5851EA73F99002DFF8C /* AudioQueueTutorialTests.swift */; };
 		F2DCC5911EA73F99002DFF8C /* AudioQueueTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCC5901EA73F99002DFF8C /* AudioQueueTutorialUITests.swift */; };
+		F2DCC59F1EA74406002DFF8C /* AudioQueuePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCC59E1EA74406002DFF8C /* AudioQueuePlayer.swift */; };
+		F2DCC5A11EA7485B002DFF8C /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F2DCC5A01EA7485B002DFF8C /* guitar.m4a */; };
+		F2DCC5A21EA7485B002DFF8C /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F2DCC5A01EA7485B002DFF8C /* guitar.m4a */; };
+		F2DCC5A31EA7485B002DFF8C /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F2DCC5A01EA7485B002DFF8C /* guitar.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,8 @@
 		F2DCC58C1EA73F99002DFF8C /* AudioQueueTutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioQueueTutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DCC5901EA73F99002DFF8C /* AudioQueueTutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQueueTutorialUITests.swift; sourceTree = "<group>"; };
 		F2DCC5921EA73F99002DFF8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2DCC59E1EA74406002DFF8C /* AudioQueuePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQueuePlayer.swift; sourceTree = "<group>"; };
+		F2DCC5A01EA7485B002DFF8C /* guitar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,10 @@
 		F2DCC56F1EA73F99002DFF8C /* AudioQueueTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				F2DCC5A01EA7485B002DFF8C /* guitar.m4a */,
 				F2DCC5701EA73F99002DFF8C /* AppDelegate.swift */,
 				F2DCC5721EA73F99002DFF8C /* ViewController.swift */,
+				F2DCC59E1EA74406002DFF8C /* AudioQueuePlayer.swift */,
 				F2DCC5741EA73F99002DFF8C /* Main.storyboard */,
 				F2DCC5771EA73F99002DFF8C /* Assets.xcassets */,
 				F2DCC5791EA73F99002DFF8C /* LaunchScreen.storyboard */,
@@ -237,6 +245,7 @@
 			files = (
 				F2DCC57B1EA73F99002DFF8C /* LaunchScreen.storyboard in Resources */,
 				F2DCC5781EA73F99002DFF8C /* Assets.xcassets in Resources */,
+				F2DCC5A11EA7485B002DFF8C /* guitar.m4a in Resources */,
 				F2DCC5761EA73F99002DFF8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DCC5A21EA7485B002DFF8C /* guitar.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DCC5A31EA7485B002DFF8C /* guitar.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +275,7 @@
 			files = (
 				F2DCC5731EA73F99002DFF8C /* ViewController.swift in Sources */,
 				F2DCC5711EA73F99002DFF8C /* AppDelegate.swift in Sources */,
+				F2DCC59F1EA74406002DFF8C /* AudioQueuePlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
