@@ -10,7 +10,7 @@ import AudioToolbox
 import AVFoundation
 
 func audioQueueOutputCallback(inUserData: UnsafeMutableRawPointer?, inQueue: AudioQueueRef, inBuffer: AudioQueueBufferRef) {
-    if var info: PlayerInfo = inUserData?.assumingMemoryBound(to: PlayerInfo.self).pointee {
+    if let info: PlayerInfo = inUserData?.assumingMemoryBound(to: PlayerInfo.self).pointee {
         var bufferLength: UInt32 = info.bufferByteSize
         var numPkgs: UInt32 = kNumberPackages
         var status = AudioFileReadPacketData(info.mAudioFile!, false, &bufferLength, info.mPacketDesc, info.mCurrentPacket, &numPkgs, inBuffer.pointee.mAudioData)
@@ -22,12 +22,13 @@ func audioQueueOutputCallback(inUserData: UnsafeMutableRawPointer?, inQueue: Aud
         info.mCurrentPacket += Int64(numPkgs)
         
         if numPkgs == 0 {
+            print("play finished")
             AudioQueueStop(info.mQueue!, false)
         }
     }
 }
 
-public struct PlayerInfo {
+public class PlayerInfo {
     var mDataFormat: AudioStreamBasicDescription?
     var mQueue: AudioQueueRef?
     var mBuffers: [AudioQueueBufferRef] = []
@@ -38,7 +39,7 @@ public struct PlayerInfo {
 }
 
 fileprivate let kNumberBuffers: UInt32 = 3
-fileprivate let kNumberPackages: UInt32 = 10 * 1_000
+fileprivate let kNumberPackages: UInt32 = 100
 
 public class AudioQueuePlayer {
     // property

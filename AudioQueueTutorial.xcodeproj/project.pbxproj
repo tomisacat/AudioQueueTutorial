@@ -528,6 +528,7 @@
 				F2DCC5971EA73F99002DFF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2DCC5981EA73F99002DFF8C /* Build configuration list for PBXNativeTarget "AudioQueueTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +537,7 @@
 				F2DCC59A1EA73F99002DFF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2DCC59B1EA73F99002DFF8C /* Build configuration list for PBXNativeTarget "AudioQueueTutorialUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +546,7 @@
 				F2DCC59D1EA73F99002DFF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
