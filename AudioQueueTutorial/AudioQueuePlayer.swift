@@ -9,16 +9,25 @@
 import AudioToolbox
 import AVFoundation
 
-func audioQueueOutputCallback(inUserData: UnsafeMutableRawPointer?, inQueue: AudioQueueRef, inBuffer: AudioQueueBufferRef) {
+fileprivate func audioQueueOutputCallback(inUserData: UnsafeMutableRawPointer?, inQueue: AudioQueueRef, inBuffer: AudioQueueBufferRef) {
     if let info = inUserData?.assumingMemoryBound(to: PlayerInfo.self) {
         var bufferLength: UInt32 = info.pointee.bufferByteSize
         var numPkgs: UInt32 = kNumberPackages
-        var status = AudioFileReadPacketData(info.pointee.mAudioFile!, false, &bufferLength, info.pointee.mPacketDesc, info.pointee.mCurrentPacket, &numPkgs, inBuffer.pointee.mAudioData)
+        var status = AudioFileReadPacketData(info.pointee.mAudioFile!,
+                                             false,
+                                             &bufferLength,
+                                             info.pointee.mPacketDesc,
+                                             info.pointee.mCurrentPacket,
+                                             &numPkgs,
+                                             inBuffer.pointee.mAudioData)
         if status == noErr {
             inBuffer.pointee.mAudioDataByteSize = bufferLength
         }
         
-        status = AudioQueueEnqueueBuffer(info.pointee.mQueue!, inBuffer, numPkgs, info.pointee.mPacketDesc)
+        status = AudioQueueEnqueueBuffer(info.pointee.mQueue!,
+                                         inBuffer,
+                                         numPkgs,
+                                         info.pointee.mPacketDesc)
         info.pointee.mCurrentPacket += Int64(numPkgs)
         
         if numPkgs == 0 {
@@ -28,7 +37,7 @@ func audioQueueOutputCallback(inUserData: UnsafeMutableRawPointer?, inQueue: Aud
     }
 }
 
-struct PlayerInfo {
+fileprivate struct PlayerInfo {
     var mDataFormat: AudioStreamBasicDescription?
     var mQueue: AudioQueueRef?
     var mBuffers: [AudioQueueBufferRef] = []
@@ -54,7 +63,7 @@ public class AudioQueuePlayer {
         do {
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
-            return
+            return nil
         }
         
         var audioFile: AudioFileID?

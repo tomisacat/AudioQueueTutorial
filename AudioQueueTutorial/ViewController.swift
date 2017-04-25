@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var player: AudioQueuePlayer?
+    var recorder: AudioQueueRecorder?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class ViewController: UIViewController {
         
         let url = URL(fileURLWithPath: path)
         player = AudioQueuePlayer(url: url)
+        
+        recorder = AudioQueueRecorder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,11 +31,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func playButtonClicked() {
+    @IBAction func playButtonClicked(sender: UIButton) {
         if player?.playing == true {
             player?.pause()
+            sender.setTitle("paused", for: .normal)
         } else {
             player?.play()
+            sender.setTitle("playing", for: .normal)
+        }
+    }
+    
+    @IBAction func recordButtonClicked(sender: UIButton) {
+        if recorder?.isRecording == true {
+            recorder?.stop()
+            sender.isHidden = true
+            Swift.print(recorder?.outputUrl ?? "no output")
+        } else {
+            recorder?.start()
         }
     }
 }

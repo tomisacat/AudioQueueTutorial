@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2911E1C1EADD16B00099733 /* AudioQueueRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2911E1B1EADD16B00099733 /* AudioQueueRecorder.swift */; };
 		F2DCC5711EA73F99002DFF8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCC5701EA73F99002DFF8C /* AppDelegate.swift */; };
 		F2DCC5731EA73F99002DFF8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCC5721EA73F99002DFF8C /* ViewController.swift */; };
 		F2DCC5761EA73F99002DFF8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DCC5741EA73F99002DFF8C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F2911E1B1EADD16B00099733 /* AudioQueueRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQueueRecorder.swift; sourceTree = "<group>"; };
 		F2DCC56D1EA73F99002DFF8C /* AudioQueueTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioQueueTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DCC5701EA73F99002DFF8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2DCC5721EA73F99002DFF8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				F2DCC5701EA73F99002DFF8C /* AppDelegate.swift */,
 				F2DCC5721EA73F99002DFF8C /* ViewController.swift */,
 				F2DCC59E1EA74406002DFF8C /* AudioQueuePlayer.swift */,
+				F2911E1B1EADD16B00099733 /* AudioQueueRecorder.swift */,
 				F2DCC5741EA73F99002DFF8C /* Main.storyboard */,
 				F2DCC5771EA73F99002DFF8C /* Assets.xcassets */,
 				F2DCC5791EA73F99002DFF8C /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2911E1C1EADD16B00099733 /* AudioQueueRecorder.swift in Sources */,
 				F2DCC5731EA73F99002DFF8C /* ViewController.swift in Sources */,
 				F2DCC5711EA73F99002DFF8C /* AppDelegate.swift in Sources */,
 				F2DCC59F1EA74406002DFF8C /* AudioQueuePlayer.swift in Sources */,
