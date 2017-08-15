@@ -64,7 +64,7 @@ public class AudioQueueRecorder {
     init?() {
         // setup format
         info.mDataFormat.mFormatID = kAudioFormatLinearPCM
-        info.mDataFormat.mSampleRate = 444100.0
+        info.mDataFormat.mSampleRate = 44100.0
         info.mDataFormat.mChannelsPerFrame = 2
         info.mDataFormat.mBitsPerChannel = 16
         info.mDataFormat.mFramesPerPacket = 1
